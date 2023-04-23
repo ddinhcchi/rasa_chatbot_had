@@ -1,0 +1,72 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_hello
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_hello
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_nextwork
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_hello
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: greet path 1
+  steps:
+  - intent: greet
+  - action: utter_hello
+  - action: utter_greet
+  - intent: deny
+  - action: utter_reply_help
+
+- story: ask_information path
+  steps:
+  - intent: wat_name
+  - action: utter_wat_name
+  - intent: how_old
+  - action: utter_how_old
+  - intent: gender
+  - action: utter_gender
+  - intent: address
+  - action: utter_address
+  - intent: ask_relationship
+  - action: utter_reply_relationship
+  
+- story: save product id
+  steps:
+  - intent: query_price
+  - action: action_query_price
+  - slot_was_set:
+    - product_id: A#001
+  - intent: query_availability_asked
+  - action: action_query_availability_asked
+
+- story: check product availability
+  steps:
+  - intent: query_availability
+  - action: action_query_availability
+  - slot_was_set:
+    - product_id: A#001
+  - intent: query_price_asked
+  - action: action_query_price_asked

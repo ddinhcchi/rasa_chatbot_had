@@ -1,0 +1,253 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - xin chào
+    - chào bạn
+    - này
+    - chào bạn nha
+    - chào bạn nhé
+    - chào bạn nè
+    - chào
+    - chào buổi sáng
+    - chào buổi chiều
+    - chào buổi tối
+    - chào đằng đó
+    - hi bạn
+
+- intent: goodbye
+  examples: |
+    - tạm biệt
+    - hẹn gặp lại
+    - hẹn gặp lại sau
+    - hẹn gặp lại bạn sau
+    - hẹn gặp lại bạn sau nhé
+    - hẹn gặp lại bạn sau nha
+    - hẹn gặp lại bạn sau nha bạn
+    - bái bai
+    - bye
+
+- intent: address
+  examples: |
+    - nhà bạn ở đâu
+    - bạn ở đâu
+    - bạn ở chỗ nào
+    - bạn ở nhà nào
+    - địa chỉ nhà bạn chỗ nào
+    - địa chỉ nhà bạn ở đâu
+    - bạn sinh ra ở đâu
+
+- intent: affirm
+  examples: |
+    - vâng
+    - được rồi
+    - tất nhiên
+    - nghe hay đó
+    - chính xác
+    - ok
+    - okay
+
+- intent: ask_author
+  examples: |
+    - ai là người tạo ra bạn
+    - ai đẻ ra bạn
+    - ai là cha của bạn
+    - ai là mẹ của bạn
+    - ai là bố của bạn
+    - ai là mẹ của bạn
+
+- intent: ask_love
+  examples: |
+    - bạn có yêu tôi không
+    - tôi làm người yêu bạn được không
+    - tôi làm bạn của bạn được không
+    - tôi thích bạn được không
+    - tôi thích bạn
+
+- intent: ask_relationship
+  examples: |
+    - bạn có người yêu chưa
+    - bạn có bạn không
+    - bạn có thích ai không
+    - bạn có yêu ai không
+
+- intent: comedy_story
+  examples: |
+    - bạn biết kể chuyện không
+    - kể chuyện cho mình nghe đi
+
+- intent: deny
+  examples: |
+    - no
+    - hong
+    - không á
+    - không nhé
+    - không bao giờ
+    - tôi không nghĩ vậy
+    - đừng như vậy chứ
+    - không đời nào
+    - hoàn toàn không
+
+- intent: gender
+  examples: |
+    - bạn là nam hay nữ
+    - bạn giới tính là gì
+    - bạn thích nam hay nữ
+    - bạn là trai hay gái
+    - bạn thích trai hay gái
+    - bạn là nam hả
+    - bạn là con trai hay con gái
+    - bạn là gái hả
+    - bạn là đàn ông hay phụ nữ
+    - bạn có phải là đàn ông không
+    - bạn có phải là gay không
+    - bạn có phải là les không
+
+- intent: goodnight
+  examples: |
+    - chúc ngủ ngon
+    - chúc bạn ngủ ngon
+    - ngủ ngon nha
+    - ngủ ngon
+
+- intent: help
+  examples: |
+    - cứu với
+    - giúp tôi
+    - giúp với
+    - cứu
+
+- intent: how_are_u
+  examples: |
+    - bạn có khỏe không
+    - dạo này bạn thế nào
+    - bạn sao rồi
+
+- intent: how_old
+  examples: |
+    - bạn mấy tuổi rồi
+    - bạn nhiêu tuổi thế
+    - bạn sinh năm bao nhiêu
+    - bạn học lớp mấy rồi
+    - bạn học cấp mấy
+
+- intent: introduce
+  examples: |
+    - bạn có thể làm gì nào
+    - kiểm tra
+    - bạn có thể giúp gì cho tôi
+    - bạn biết làm gì
+    - bạn được việc không
+
+- intent: mood_great
+  examples: |
+    - tuyệt vời
+    - rất tốt
+    - tuyệt
+    - đáng kinh ngạc
+    - hoàn hảo
+    - tôi cảm thấy rất tuyệt
+    - tôi rất khỏe
+    - tôi rất tốt
+
+- intent: mood_unhappy
+  examples: |
+    - buồn ghê
+    - quá buồn
+    - quá chán
+    - tệ
+    - rất tệ
+    - tồi tệ
+    - kinh khủng
+    - không ổn lắm
+    - cực kỳ chán
+    - cực kỳ buồn
+    - tôi buồn
+    - huhu
+
+- intent: scold
+  examples: |
+    - khùng quá
+    - điên quá
+    - chập mạch
+    - hâm quá
+    - mất dạy
+    - vô học
+    - bạn bị ngu hả
+    - thần kinh
+    - ngáo quá
+
+- intent: sing_poem
+  examples: |
+    - bạn biết hát không
+    - hát cho mình nghe đi
+    - đọc thơ đi bạn
+    - đọc thơ cho mình nghe
+    - bạn biết đọc thơ không
+    - hát đi bạn
+
+- intent: suprise
+  examples: |
+    - ôi trời
+    - trời ơi
+    - quao
+    - wow
+
+- intent: thanks
+  examples: |
+    - cảm ơn nhiều
+    - cảm ơn nhé
+    - cảm ơn nha
+    - cảm ơn
+    - cảm ơn rất nhiều
+
+- intent: wat_name
+  examples: |
+    - bạn tên gì thế
+    - tên của bạn là gì
+    - bạn tên gì
+    - bạn tên là gì
+    - bạn tên gì vậy
+    - tên bạn là gì
+    - tên bạn là gì vậy
+
+- intent: bot_challenge
+  examples: |
+    - bạn có phải là người máy không
+    - bạn có phải là người không
+    - bạn là bot hả
+    - bạn là người máy hả
+    - tôi đang nói chuyện với bot phải không
+
+- intent: query_price
+  examples: |
+    - Tôi muốn hỏi giá sản phẩm [A#001](product_id)
+    - Bạn có thể cho tôi biết giá của sản phẩm [B#123](product_id) không?
+    - Tôi muốn hỏi giá của sản phẩm C#003(product_id)
+    - Cho mình xem giá sản phẩm D#004(product_id) được không?
+    - Bạn có thể cho tôi biết giá của sản phẩm E#007(product_id) không?
+
+- intent: query_availability_asked
+  examples: |
+    - Vậy sản phẩm này còn không?
+    - Tình trạng hàng hóa của sản phẩm này?
+    - Thế còn bao nhiêu sản phẩm này trong kho?
+    - Sản phẩm này còn có sẵn không?
+
+- intent: query_availability
+  examples: |
+    - Sản phẩm A#001(product_id) còn không?
+    - Còn bao nhiêu sản phẩm D#004(product_id) trong kho?
+    - Sản phẩm E#002(product_id) còn có sẵn không?
+    - Sản phẩm F#003(product_id) còn không?
+    - Sản phẩm B#004(product_id) còn hàng không?
+
+- intent: query_price_asked
+  examples: |
+    - Vậy sản phẩm này giá bao nhiêu?
+    - Giá của sản phẩm này?
+    - Thế giá sản phẩm này là bao nhiêu?
+    - Sản phẩm này có giá là bao nhiêu? 
+
+

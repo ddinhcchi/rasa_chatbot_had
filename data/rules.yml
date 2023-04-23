@@ -1,0 +1,116 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+  steps:
+  - intent: nlu_fallback
+  - action: utter_default
+
+- rule: thankyou
+  steps:
+  - intent: thanks
+  - action: utter_nothing
+  - action: utter_nextwork
+
+- rule: goodnight
+  steps:
+  - intent: goodnight
+  - action: utter_thanks
+  - action: utter_goodnight
+
+- rule: ask_author
+  steps:
+  - intent: ask_author
+  - action: utter_author
+
+- rule: ask_relationship
+  steps:
+  - intent: ask_relationship
+  - action: utter_reply_relationship
+
+- rule: suprise
+  steps:
+  - intent: suprise
+  - action: utter_suprise
+
+- rule: address
+  steps:
+  - intent: address
+  - action: utter_address
+
+- rule: help
+  steps:
+  - intent: help
+  - action: utter_reply_help
+
+- rule: introduce
+  steps:
+  - intent: introduce
+  - action: utter_introduce
+
+- rule: suprise
+  steps:
+  - intent: suprise
+  - action: utter_suprise
+
+- rule: love
+  steps:
+  - intent: ask_love
+  - action: utter_reply_love
+
+- rule: how old
+  steps:
+  - intent: how_old
+  - action: utter_how_old
+
+- rule: gender
+  steps:
+  - intent: gender
+  - action: utter_gender
+
+- rule: how are u
+  steps:
+  - intent: how_are_u
+  - action: utter_how_are_u
+
+- rule: sing poem
+  steps:
+  - intent: sing_poem
+  - action: utter_sing_poem
+
+- rule: comedy story
+  steps:
+  - intent: comedy_story
+  - action: utter_comedy_story
+
+- rule: affirm
+  steps:
+  - intent: affirm
+  - action: utter_nextwork
+
+- rule: scold
+  steps:
+  - intent: scold
+  - action: utter_scold
+  - action: utter_hurt
+
+- rule: ask relationship
+  steps:
+  - intent: ask_relationship
+  - action: utter_reply_relationship
+
+# - rule: check product availability
+#   steps:
+#   - intent: query_availability
+#   - action: action_query_availability

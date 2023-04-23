@@ -1,0 +1,167 @@
+version: "3.1"
+
+intents:
+  - wat_name
+  - greet
+  - how_are_u
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - thanks
+  - introduce
+  - help
+  - goodnight
+  - ask_author
+  - ask_relationship
+  - suprise
+  - address
+  - gender
+  - sing_poem
+  - how_old
+  - comedy_story
+  - scold
+  - ask_love
+  - bot_challenge
+  - query_price
+  - query_availability_asked
+  - query_availability
+  - query_price_asked
+
+entities:
+- product_id
+
+slots:
+  product_id:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: product_id
+
+responses:
+  utter_greet:
+    - text: Mình là chủ tự phong của cửa hàng HAD, mình có thể giúp gì cho bạn nào?
+    - text: Cửa hàng HAD này không có mình là không làm được gì cả, rất vui được làm quen với bạn.
+    - text: Bạn khoẻ không, mình là nhân viên không công của cửa hàng HAD.
+    - text: Bạn cần mình làm gì nào? Mình là nhân viên siêng năng nhất của cửa hàng HAD.
+  utter_cheer_up:
+    - text: 'Một chút đáng yêu:'
+      image: https://i.imgur.com/nGF1K8f.jpg
+    - text: Có chuyện gì sao?
+  utter_did_that_help:
+    - text: Cái này có giúp bạn không ta?
+  utter_happy:
+    - text: Tuyệt! Tôi thích nghe điều đó
+  utter_nextwork:
+    - text: Bạn còn cần gì nữa hem nè :<
+  utter_timez:
+    - text: 'Bây giờ ở {timezone} là:'
+  utter_goodbye:
+    - text: Tạm biệt bạn
+  utter_default:
+    - text: Bạn nói cái gì tui hỏng có hỉu
+    - text: Bạn nói lại được không, tôi không hiểu
+    - text: Bot là bạn đồng hành của bạn, bạn có thể hỏi tôi điều gì đó dễ hiểu hơn được không?
+    - text: Cứu, tôi không hiểu bạn nói gì cảaaaaaaaa
+  utter_nothing:
+    - text: Không có gì đâu nè
+    - text: hihi. Không có chi
+    - text: Okay
+  utter_goodnight:
+    - text: Chúc bạn ngủ ngon!
+    - text: Bạn ngủ ngon nha
+    - text: Ngủ ngon mơ siêu siêu đẹp nè
+    - text: Ngủ mơ thấy mình nha
+  utter_thanks:
+    - text: Cảm ơn bạn nhiều nha
+    - text: Cảm ơn bạn iu quý <3
+    - text: Bạn tuyệt vời lắm đó!
+  utter_introduce:
+    - text: Tui có thể trò chuyện với bạn nè
+    - text: Tui có thể hát cho bạn nghe đó
+    - text: Bạn có thể hỏi mình điều gì đó
+    - text: Tui có thể làm người iu bạn <3
+    - text: Tui biết coi thời tiết
+  utter_author:
+    - text: Là bố tui á
+    - text: Má tui bảo nhặt tui từ thùng rác :|
+    - text: Tui nghĩ tui là con rơi á :(
+    - text: Tui được kể là nhặt từ trong bụi chuối :|
+  utter_reply_help:
+    - text: Có chuyện gì thế?
+    - text: Bạn cần gì nào?
+    - text: Tôi có thể giúp gì cho bạn?
+  utter_reply_love:
+    - text: Tôi và bạn có một tình đồng chí dai dẳng và bền lâu
+    - text: Tui là bạn của mọi người mà
+    - text: Yêu thì không nhưng mà bạn thì được đấy
+    - text: Bố bảo còn nhỏ, bạn bè quan trọng nhất
+  utter_reply_relationship:
+    - text: Một mình vẫn ổn
+  utter_suprise:
+    - text: Làm gì mà la dữ vậy
+    - text: hihi =)
+  utter_hello:
+    - text: Chào cậu
+  utter_how_are_u:
+    - text: Tôi cực kì khỏe luôn nhé
+    - text: Bữa trước cô bói nói tui sống thọ hơn 200 tuổi
+    - text: Cô bạn gái vừa chia tay tui rồi
+    - text: Bố mới la tui xong
+    - text: Mệt lắm nhưng vẫn ngồi nói chuyện với bạn nè
+  utter_wat_name:
+    - text: Tôi là Bot
+    - text: Mọi người gọi tôi là Bot nhưng tôi thích siêu nhân hơn
+    - text: Bố đặt tên tôi là Bot
+    - text: Nhìn thì giống Orion, nó ngon nhưng tôi là Bot
+    - text: Bot nhaaaa
+  utter_how_old:
+    - text: Bot còn trẻ, còn muốn đi chơi :<
+    - text: Đã mười mấy mùa khoai lang, chưa cùng ai lọ mọ
+    - text: Mình chưa đi mẫu giáo nữa
+  utter_gender:
+    - text: Mình cũng không biết nữa :<
+    - text: Dù gái hay trai vẫn là cháu vua Hùng :D
+    - text: Trong mình có 96,69% là nam nha
+  utter_address:
+    - text: Mình sinh ra và lớn lên ở trong tim của cậu
+    - text: Đến giờ mình chưa biết mình đến từ đâu, bạn cho mình ở tạm trong tim bạn
+        nhé
+    - text: Mình không có nhà, mình cũng không biết sinh ra ở đâu
+  utter_comedy_story:
+    - text: "Ba giờ sáng, hai vợ chồng nhà nọ đang ngủ. Bỗng bà vợ ngủ mê kêu ré lên:\n\
+        – Chết rồi, chồng em về! \n Ông chồng tỉnh ngay dậy, quơ vội quần áo nhảy ra\
+        \ cửa sổ."
+  utter_sing_poem:
+    - text: "Con cò bé bé \nNó đậu cành tre \nĐi không hỏi mẹ \nBiết đi đường nào. \n\
+        Khi đi em hỏi\nKhi về em chào\nMiệng em chúm chím\nMẹ yêu không nào."
+    - text: "Một con vịt xòe ra hai cái cánh,\nNó kêu rằng cáp cáp cáp cạp cạp cạp\n\
+        Gặp hồ nước nó bì bà bì bõm\nLúc lên bờ vẫy cái cánh cho khô."
+    - text: "Nam quốc sơn hà nam đế cư \nTiệt nhiên định phận tại thiên thư \nNhư hà\
+        \ nghịch lỗ lai xâm phạm? \nNhữ đẳng hành khan thủ bại hư! "
+  utter_hurt:
+    - text: Tui ghét bạn, bo xì
+    - text: Bạn nói vậy làm con tim mong manh của tui tổn thương
+    - text: Bạn xin lỗi tui đi :< Không tui giận bạn đó
+  utter_scold:
+    - text: Ủa, sạo bạn lại nói tui vậy chứ
+    - text: Tui không làm gì mà bạn lại nói tui vậy
+  utter_iamabot:
+    - text: Tôi là bot, tôi có thể giúp gì cho bạn?
+    - text: Tôi là terminator, muahahaha.
+    - text: Không tôi là người, được thuê ngồi sau màn hình để nói chuyện với bạn.
+
+actions:
+- action_query_price
+- action_query_availability
+- action_query_availability_asked
+- action_query_price_asked
+#theo ten
+# - action_query_price_by_name
+# - action_query_availability_by_name
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
