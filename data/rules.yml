@@ -110,7 +110,3 @@ rules:
   - intent: ask_relationship
   - action: utter_reply_relationship
 
-# - rule: check product availability
-#   steps:
-#   - intent: query_availability
-#   - action: action_query_availability

@@ -139,3 +139,70 @@ class ActionQueryPriceAsked(Action):
             dispatcher.utter_message(f"Bạn muốn hỏi sản phẩm nào vậy?")
         connection.close()
         return []
+
+#theo ten---------------------------------------------------------------------------------------------------------------
+class ActionQueryPriceByName(Action):
+    def name(self) -> Text:
+        return "action_query_price_by_name"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        try:
+            # Lấy mã sản phẩm từ intent
+            product_name = tracker.latest_message['entities'][0]['value']
+
+            # Tạo kết nối đến SQLite database
+            connection = sqlite3.connect('./db/rasa_store.db')
+
+            # Tạo một đối tượng cursor
+            cursor = connection.cursor()
+
+            # Thực hiện truy vấn để lấy số lượng sản phẩm còn lại
+            cursor.execute("SELECT ID, NAME, PRICE FROM goods WHERE NAME LIKE ?", (product_name,))
+
+            # Lấy số lượng sản phẩm còn lại và trả về cho người dùng
+            # Lấy giá cả và trả về cho người dùng
+            result = cursor.fetchone()
+            if result:
+                product_id, name, price = result
+                dispatcher.utter_message(f"Sản phẩm {name} có mã {product_id} và có giá là {price}")
+                return [SlotSet("product_id", product_id)]
+            else:
+                dispatcher.utter_message(f"Không có sản phẩm nào có tên là  {product_name} trong hệ thống, hãy chắc chắn rằng bạn đã nhập đúng tên sản phẩm theo dạng viết IN HOA KHÔNG DẤU")
+        except TypeError:
+            # Trường hợp mã sản phẩm không tồn tại trong database
+            dispatcher.utter_message(f"Không có sản phẩm nào có tên là  {product_name} trong hệ thống, hãy chắc chắn rằng bạn đã nhập đúng tên sản phẩm theo dạng viết IN HOA KHÔNG DẤU")
+        connection.close()
+        return []
+    
+class ActionQueryAvailabilityByName(Action):
+    def name(self) -> Text:
+        return "action_query_availability_by_name"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        try:
+            # Lấy mã sản phẩm từ intent
+            product_name = tracker.latest_message['entities'][0]['value']
+
+            # Tạo kết nối đến SQLite database
+            connection = sqlite3.connect('./db/rasa_store.db')
+
+            # Tạo một đối tượng cursor
+            cursor = connection.cursor()
+
+            # Thực hiện truy vấn để lấy số lượng sản phẩm còn lại
+            cursor.execute("SELECT ID, NAME, COUNT FROM goods WHERE NAME LIKE ?", (product_name,))
+
+            # Lấy số lượng sản phẩm còn lại và trả về cho người dùng
+            # Lấy giá cả và trả về cho người dùng
+            result = cursor.fetchone()
+            if result:
+                id, name, count = result
+                dispatcher.utter_message(f"Sản phẩm {name} có mã {id} và số lượng còn lại là {count}")
+                return [SlotSet("product_id", id)]
+            else:
+                dispatcher.utter_message(f"Không có sản phẩm nào có tên là  {product_name} trong hệ thống, hãy chắc chắn rằng bạn đã nhập đúng tên sản phẩm theo dạng viết IN HOA KHÔNG DẤU")
+        except TypeError:
+            # Trường hợp mã sản phẩm không tồn tại trong database
+            dispatcher.utter_message(f"Không có sản phẩm nào có tên là  {product_name} trong hệ thống, hãy chắc chắn rằng bạn đã nhập đúng tên sản phẩm theo dạng viết IN HOA KHÔNG DẤU")
+        connection.close()
+        return []

@@ -28,9 +28,16 @@ intents:
   - query_availability_asked
   - query_availability
   - query_price_asked
+  # theo ten
+  - query_price_by_name
+  - query_availability_by_name
+  # het theo ten
+  - query_look_good
+  - query_buy
 
 entities:
 - product_id
+- product_name
 
 slots:
   product_id:
@@ -55,10 +62,8 @@ responses:
     - text: Tuyệt! Tôi thích nghe điều đó
   utter_nextwork:
     - text: Bạn còn cần gì nữa hem nè :<
-  utter_timez:
-    - text: 'Bây giờ ở {timezone} là:'
   utter_goodbye:
-    - text: Tạm biệt bạn
+    - text: Tạm biệt bạn, nhé ghé cửa hàng mình nha.
   utter_default:
     - text: Bạn nói cái gì tui hỏng có hỉu
     - text: Bạn nói lại được không, tôi không hiểu
@@ -78,13 +83,9 @@ responses:
     - text: Cảm ơn bạn iu quý <3
     - text: Bạn tuyệt vời lắm đó!
   utter_introduce:
-    - text: Tui có thể trò chuyện với bạn nè
-    - text: Tui có thể hát cho bạn nghe đó
-    - text: Bạn có thể hỏi mình điều gì đó
-    - text: Tui có thể làm người iu bạn <3
-    - text: Tui biết coi thời tiết
+    - text: Mình có thể giúp bạn tìm kiếm thông tin sản phẩm như giá hay là sản phẩm còn hàng không? Bên cạnh đó là mình có thể trò chuyện với bạn, hát cho bạn nghe, kể chuyện cười nữa.
   utter_author:
-    - text: Là bố tui á
+    - text: Là bạn Dinh, bạn Hào và bạn Anh chứ còn ai nữa.
     - text: Má tui bảo nhặt tui từ thùng rác :|
     - text: Tui nghĩ tui là con rơi á :(
     - text: Tui được kể là nhặt từ trong bụi chuối :|
@@ -125,10 +126,9 @@ responses:
     - text: Dù gái hay trai vẫn là cháu vua Hùng :D
     - text: Trong mình có 96,69% là nam nha
   utter_address:
-    - text: Mình sinh ra và lớn lên ở trong tim của cậu
-    - text: Đến giờ mình chưa biết mình đến từ đâu, bạn cho mình ở tạm trong tim bạn
-        nhé
-    - text: Mình không có nhà, mình cũng không biết sinh ra ở đâu
+    - text: Mình làm việc tại cơ sở chính của cửa hàng, 280 đường An Dương Vương đó.
+    - text: Đến giờ mình chưa biết mình đến từ đâu, vừa mở mắt thì địa chỉ cửa hàng mình đã ở 280 đường An Dương Vương rồi.
+    - text: Mình không có nhà mà mình có nguyên cái cửa tiệm ở 280 đường An Dương Vương.
   utter_comedy_story:
     - text: "Ba giờ sáng, hai vợ chồng nhà nọ đang ngủ. Bỗng bà vợ ngủ mê kêu ré lên:\n\
         – Chết rồi, chồng em về! \n Ông chồng tỉnh ngay dậy, quơ vội quần áo nhảy ra\
@@ -151,6 +151,12 @@ responses:
     - text: Tôi là bot, tôi có thể giúp gì cho bạn?
     - text: Tôi là terminator, muahahaha.
     - text: Không tôi là người, được thuê ngồi sau màn hình để nói chuyện với bạn.
+  utter_look_good:
+    - text: Bạn dùng đồ gì của cửa hàng chúng tôi cũng đẹp cả.
+    - text: Đã mua đồ của cửa hàng chúng tôi thì chắc chắn sẽ đẹp.
+    - text: Bạn mang gì mặc gì cũng đẹp cả.
+  utter_buy:
+    - text: Bạn có thể mua đồ trực tiếp tại cửa hàng 280 An Dương Vương hoặc mua trực tuyến trên website https:\\abc.xyz của chúng tôi.
 
 actions:
 - action_query_price
@@ -158,8 +164,8 @@ actions:
 - action_query_availability_asked
 - action_query_price_asked
 #theo ten
-# - action_query_price_by_name
-# - action_query_availability_by_name
+- action_query_price_by_name
+- action_query_availability_by_name
 
 
 session_config:

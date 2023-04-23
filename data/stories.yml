@@ -70,3 +70,21 @@ stories:
     - product_id: A#001
   - intent: query_price_asked
   - action: action_query_price_asked
+
+- story: check product price by name
+  steps:
+  - intent: query_price_by_name
+  - action: action_query_price_by_name
+  - slot_was_set:
+    - product_id: A#001
+  - intent: query_availability_asked
+  - action: action_query_availability_asked
+
+- story: check product availability by name
+  steps:
+  - intent: query_availability_by_name
+  - action: action_query_availability_by_name
+  - slot_was_set:
+    - product_id: A#001
+  - intent: query_price_asked
+  - action: action_query_price_asked

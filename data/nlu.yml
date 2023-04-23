@@ -55,7 +55,9 @@ nlu:
     - ai là cha của bạn
     - ai là mẹ của bạn
     - ai là bố của bạn
-    - ai là mẹ của bạn
+    - bạn được tạo ra như thế nào
+    - bạn được ai tạo ra
+    - bạn được ai lập trình ra
 
 - intent: ask_love
   examples: |
@@ -224,9 +226,9 @@ nlu:
   examples: |
     - Tôi muốn hỏi giá sản phẩm [A#001](product_id)
     - Bạn có thể cho tôi biết giá của sản phẩm [B#123](product_id) không?
-    - Tôi muốn hỏi giá của sản phẩm C#003(product_id)
-    - Cho mình xem giá sản phẩm D#004(product_id) được không?
-    - Bạn có thể cho tôi biết giá của sản phẩm E#007(product_id) không?
+    - Tôi muốn hỏi giá của sản phẩm [C#003](product_id)
+    - Cho mình xem giá sản phẩm [D#004](product_id) được không?
+    - Bạn có thể cho tôi biết giá của sản phẩm [E#007](product_id) không?
 
 - intent: query_availability_asked
   examples: |
@@ -237,11 +239,11 @@ nlu:
 
 - intent: query_availability
   examples: |
-    - Sản phẩm A#001(product_id) còn không?
-    - Còn bao nhiêu sản phẩm D#004(product_id) trong kho?
-    - Sản phẩm E#002(product_id) còn có sẵn không?
-    - Sản phẩm F#003(product_id) còn không?
-    - Sản phẩm B#004(product_id) còn hàng không?
+    - Sản phẩm [A#001](product_id) còn không?
+    - Còn bao nhiêu sản phẩm [D#004](product_id) trong kho?
+    - Sản phẩm [E#002](product_id) còn có sẵn không?
+    - Sản phẩm [F#003](product_id) còn không?
+    - Sản phẩm [B#004](product_id) còn hàng không?
 
 - intent: query_price_asked
   examples: |
@@ -249,5 +251,36 @@ nlu:
     - Giá của sản phẩm này?
     - Thế giá sản phẩm này là bao nhiêu?
     - Sản phẩm này có giá là bao nhiêu? 
+
+- intent: query_price_by_name
+  examples: |
+    - Sản phẩm [QUAN TAY ONG RONG](product_name) giá bao nhiêu?
+    - Giá của sản phẩm [SO MI TAY NGAN](product_name)?
+    - Giá sản phẩm [dam da hoi](product_name) là bao nhiêu?
+    - Sản phẩm [ao thun tay dai](product_name) có giá là bao nhiêu?
+
+- intent: query_availability_by_name
+  examples: |
+    - Sản phẩm [QUAN TAY ONG RONG](product_name) còn không?
+    - Còn bao nhiêu sản phẩm [AO THUN TAY NGAN](product_name) trong kho?
+    - Sản phẩm [quan dui rach toi ta](product_name) còn có sẵn không?
+    - Sản phẩm [giay thuong dinh](product_name) còn không?
+    - Sản phẩm [giay nike](product_name) còn hàng không?
+
+- intent: query_look_good
+  examples: |
+    - Tôi mặc áo này lên có đẹp không?
+    - Tôi mang quần này lên có đẹp không?
+    - Tôi mặc giày này lên có đẹp không?
+    - Mang giày này có đẹp không ta?
+
+- intent: query_buy
+  examples: |
+    - Tôi muốn mua sản phẩm A#001 thì làm sao?
+    - Tôi muốn mua sản phẩm QUAN TAY ONG RONG thì làm sao?
+    - Tôi muốn mua sản phẩm này thì làm sao?
+    - Tôi có thể đặt hàng tại đây không?
+    - Tôi có thể thanh toán tại đây không?
+    - Phải làm như thế nào để mua sản phẩm này?
 
 
