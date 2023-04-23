@@ -34,6 +34,7 @@ intents:
   # het theo ten
   - query_look_good
   - query_buy
+  - selling_products
 
 entities:
 - product_id
@@ -63,7 +64,7 @@ responses:
   utter_nextwork:
     - text: Bạn còn cần gì nữa hem nè :<
   utter_goodbye:
-    - text: Tạm biệt bạn, nhé ghé cửa hàng mình nha.
+    - text: Tạm biệt bạn, nhớ ghé cửa hàng mình nha.
   utter_default:
     - text: Bạn nói cái gì tui hỏng có hỉu
     - text: Bạn nói lại được không, tôi không hiểu
@@ -83,7 +84,7 @@ responses:
     - text: Cảm ơn bạn iu quý <3
     - text: Bạn tuyệt vời lắm đó!
   utter_introduce:
-    - text: Mình có thể giúp bạn tìm kiếm thông tin sản phẩm như giá hay là sản phẩm còn hàng không? Bên cạnh đó là mình có thể trò chuyện với bạn, hát cho bạn nghe, kể chuyện cười nữa.
+    - text: "Mình có thể giúp bạn tìm kiếm thông tin sản phẩm như giá hay là sản phẩm còn hàng không? Bên cạnh đó là mình có thể trò chuyện với bạn, hát cho bạn nghe, kể chuyện cười nữa. \n Lưu ý là khi bạn hỏi mình về sản phẩm thì bạn phải ghi rõ tên sản phẩm IN HOA KHÔNG DẤU hoặc mã sản phẩm nhé. (Có ở trên web) \n Ví dụ: \n - Giá sản phẩm A#001 \n - Giá sản phẩm QUAN TAY ONG RONG" 
   utter_author:
     - text: Là bạn Dinh, bạn Hào và bạn Anh chứ còn ai nữa.
     - text: Má tui bảo nhặt tui từ thùng rác :|
@@ -157,6 +158,8 @@ responses:
     - text: Bạn mang gì mặc gì cũng đẹp cả.
   utter_buy:
     - text: Bạn có thể mua đồ trực tiếp tại cửa hàng 280 An Dương Vương hoặc mua trực tuyến trên website https:\\abc.xyz của chúng tôi.
+  utter_selling_products:
+    - text: Cửa hàng của mình bán các mặt hàng như quần jean, quần tây, áo sơ mi, áo thun, giày thể thao và rất nhiều mặt hàng khác, bạn hãy lên website https:\\abc.xyz của mình để xem thêm.
 
 actions:
 - action_query_price

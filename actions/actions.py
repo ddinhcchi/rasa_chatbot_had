@@ -47,7 +47,7 @@ class ActionQueryPrice(Action):
                 dispatcher.utter_message(f"Sản phẩm {product_id} không tồn tại trong hệ thống")
         except TypeError:
             # Trường hợp mã sản phẩm không tồn tại trong database
-            dispatcher.utter_message(f"Sản phẩm {product_id} không tồn tại trong hệ thống")
+            dispatcher.utter_message(f"Sản phẩm không tồn tại trong hệ thống")
         
         # Đóng kết nối database
         connection.close()
@@ -109,7 +109,7 @@ class ActionQueryAvailability(Action):
                 dispatcher.utter_message(f"Sản phẩm {product_id} không tồn tại trong hệ thống")
         except TypeError:
             # Trường hợp mã sản phẩm không tồn tại trong database
-            dispatcher.utter_message(f"Sản phẩm {product_id} không tồn tại trong hệ thống")
+            dispatcher.utter_message(f"Sản phẩm không tồn tại trong hệ thống")
         connection.close()
         return [SlotSet("product_id", product_id)]
 
@@ -170,7 +170,7 @@ class ActionQueryPriceByName(Action):
                 dispatcher.utter_message(f"Không có sản phẩm nào có tên là  {product_name} trong hệ thống, hãy chắc chắn rằng bạn đã nhập đúng tên sản phẩm theo dạng viết IN HOA KHÔNG DẤU")
         except TypeError:
             # Trường hợp mã sản phẩm không tồn tại trong database
-            dispatcher.utter_message(f"Không có sản phẩm nào có tên là  {product_name} trong hệ thống, hãy chắc chắn rằng bạn đã nhập đúng tên sản phẩm theo dạng viết IN HOA KHÔNG DẤU")
+            dispatcher.utter_message(f"Không có sản phẩm nào tên như vậy trong hệ thống, hãy chắc chắn rằng bạn đã nhập đúng tên sản phẩm theo dạng viết IN HOA KHÔNG DẤU")
         connection.close()
         return []
     
@@ -203,6 +203,6 @@ class ActionQueryAvailabilityByName(Action):
                 dispatcher.utter_message(f"Không có sản phẩm nào có tên là  {product_name} trong hệ thống, hãy chắc chắn rằng bạn đã nhập đúng tên sản phẩm theo dạng viết IN HOA KHÔNG DẤU")
         except TypeError:
             # Trường hợp mã sản phẩm không tồn tại trong database
-            dispatcher.utter_message(f"Không có sản phẩm nào có tên là  {product_name} trong hệ thống, hãy chắc chắn rằng bạn đã nhập đúng tên sản phẩm theo dạng viết IN HOA KHÔNG DẤU")
+            dispatcher.utter_message(f"Không có sản phẩm nào có tên như vậy trong hệ thống, hãy chắc chắn rằng bạn đã nhập đúng tên sản phẩm theo dạng viết IN HOA KHÔNG DẤU")
         connection.close()
         return []

@@ -98,3 +98,8 @@ stories:
   steps:
   - intent: query_buy
   - action: utter_buy
+
+- story: selling products
+  steps:
+  - intent: selling_products
+  - action: utter_selling_products
