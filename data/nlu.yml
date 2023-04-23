@@ -283,4 +283,12 @@ nlu:
     - Tôi có thể thanh toán tại đây không?
     - Phải làm như thế nào để mua sản phẩm này?
 
+- intent: selling_products
+  examples: |
+    - Cửa hàng bạn bán những sản phẩm gì?
+    - Cửa hàng bạn bán những sản phẩm nào?
+    - Cửa hàng bạn bán những mặt hàng nào?
+    - Cửa hàng bạn có những gì?
+    - Cửa hàng bạn bán cái gì?
+
 
