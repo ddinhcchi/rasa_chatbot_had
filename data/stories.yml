@@ -88,3 +88,13 @@ stories:
     - product_id: A#001
   - intent: query_price_asked
   - action: action_query_price_asked
+
+- story: look good
+  steps:
+  - intent: query_look_good
+  - action: utter_look_good
+
+- story: buy
+  steps:
+  - intent: query_buy
+  - action: utter_buy
