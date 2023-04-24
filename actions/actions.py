@@ -43,6 +43,7 @@ class ActionQueryPrice(Action):
             if result:
                 name, price = result
                 dispatcher.utter_message(f"Sản phẩm {name} có mã {product_id} và giá là {price}")
+                return [SlotSet("product_id", product_id)]
             else:
                 dispatcher.utter_message(f"Sản phẩm {product_id} không tồn tại trong hệ thống")
         except TypeError:
@@ -52,7 +53,7 @@ class ActionQueryPrice(Action):
         # Đóng kết nối database
         connection.close()
 
-        return [SlotSet("product_id", product_id)]
+        return []
     
 class ActionQueryAvailabilityAsked(Action):
     def name(self) -> Text:
@@ -105,13 +106,14 @@ class ActionQueryAvailability(Action):
             if result:
                 name, count = result
                 dispatcher.utter_message(f"Sản phẩm {name} có mã {product_id} và số lượng còn lại là {count}")
+                return [SlotSet("product_id", product_id)]
             else:
                 dispatcher.utter_message(f"Sản phẩm {product_id} không tồn tại trong hệ thống")
         except TypeError:
             # Trường hợp mã sản phẩm không tồn tại trong database
             dispatcher.utter_message(f"Sản phẩm không tồn tại trong hệ thống")
         connection.close()
-        return [SlotSet("product_id", product_id)]
+        return []
 
 class ActionQueryPriceAsked(Action):
     def name(self) -> Text:
